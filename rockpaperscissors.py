@@ -3,13 +3,13 @@ from secrets import choice
 
 
 def the_game():
-    choices = ['Paper', 'Rock', 'Scissors']
-    player_choice = input("Rock, Paper or Scissors?")
+    choices = ['paper', 'rock', 'scissors']
+    player_choice = input("rock, paper or scissors?").lower()
     computer_choice = random.choice(choices)
 
     while player_choice not in choices:
         player_choice = input(
-            "Please enter either Rock, Paper or Scissors. (In the exact same way)")
+            "Please enter either rock, paper or scissors. (In the exact same way)").lower()
 
     print("Computer's choice is :" + computer_choice)
     print("Player's choice is:" + player_choice)
@@ -17,25 +17,25 @@ def the_game():
 
     if player_choice == computer_choice:
         print("tie!")
-    elif player_choice == "Rock":
-        if computer_choice == "Scissors":
-            print("Rock wins Scissors. Well played!")
-        elif computer_choice == "Paper":
-            print("Paper wins Rock. Better luck next time!")
-    elif player_choice == "Scissors":
-        if computer_choice == "Rock":
-            print("Rock wins Scissors. Better luck next time!")
-        elif computer_choice == "Paper":
-            print("Scissors wins Paper. Well played!")
-    elif player_choice == "Paper":
-        if computer_choice == "Scissors":
-            print("Sissors wins Paper. Better luck next time!")
-        elif computer_choice == "Rock":
-            print("Paper wins Rock. Well Played!")
+    elif player_choice == "rock":
+        if computer_choice == "scissors":
+            print("rock wins scissors. Well played!")
+        elif computer_choice == "paper":
+            print("paper wins rock. Better luck next time!")
+    elif player_choice == "scissors":
+        if computer_choice == "rock":
+            print("rock wins scissors. Better luck next time!")
+        elif computer_choice == "paper":
+            print("scissors wins paper. Well played!")
+    elif player_choice == "paper":
+        if computer_choice == "scissors":
+            print("Sissors wins paper. Better luck next time!")
+        elif computer_choice == "rock":
+            print("paper wins rock. Well Played!")
 
 the_game()
-answer = input("Would you like to play again? \n Type yes to play again and anything else to exit :)")
+answer = input("Would you like to play again? \n Type yes to play again and anything else to exit :)").lower()
 while answer == "yes":
     the_game()
-    answer = input("Would you like to play again? \n Type yes to play again and anything else to exit :)")
+    answer = input("Would you like to play again? \n Type yes to play again and anything else to exit :)").lower()
 print("See ya! Until next time buddy :).")
